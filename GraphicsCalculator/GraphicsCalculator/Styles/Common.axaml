@@ -1,0 +1,24 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- Add Styles Here -->
+	
+	<!-- Кнопки операций -->
+	<Style Selector="Button.OperationButton">
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="Margin" Value="10 5 10 5" />
+		<Setter Property="Background" Value="LightBlue" />
+	</Style>
+
+	<!-- Кнопки операций (когда над ними мышь) -->
+	<Style Selector="Button.OperationButton:pointerover /template/ ContentPresenter">
+		<Setter Property="Background" Value="Green" />
+		<Setter Property="Foreground" Value="White" />
+	</Style>
+</Styles>
