@@ -16,6 +16,18 @@
 		<Setter Property="Background" Value="LightBlue" />
 	</Style>
 
+	<!-- Заголовки -->
+	<Style Selector="Label.Labels">
+		<Setter Property="Grid.Row" Value="0" />
+		<Setter Property="Margin" Value="10 5 10 0" />
+	</Style>
+
+	<!-- Поле ввода -->
+	<Style Selector="Label.TextBox">
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Margin" Value="10 0 10 5" />
+	</Style>
+
 	<!-- Кнопки операций (когда над ними мышь) -->
 	<Style Selector="Button.OperationButton:pointerover /template/ ContentPresenter">
 		<Setter Property="Background" Value="Green" />

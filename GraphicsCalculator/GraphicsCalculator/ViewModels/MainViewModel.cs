@@ -46,7 +46,27 @@ public class MainViewModel : ViewModelBase
     /// <summary>
     /// Команда сложения
     /// </summary>
-    public ReactiveCommand<Unit, Unit> AddCommand { get; }
+    public ReactiveCommand<Unit, Unit> AddCommandSum { get; }
+
+    /// <summary>
+    /// Команда вычитания
+    /// </summary>
+    public ReactiveCommand<Unit, Unit> AddCommandSub { get; }
+
+    /// <summary>
+    /// Команда деления
+    /// </summary>
+    public ReactiveCommand<Unit, Unit> AddCommandDiv { get; }
+
+    /// <summary>
+    /// Команда умножения
+    /// </summary>
+    public ReactiveCommand<Unit, Unit> AddCommandMult { get; }
+
+    /// <summary>
+    /// Команда сброса
+    /// </summary>
+    public ReactiveCommand<Unit, Unit> ResetCommand { get; }
 
     #endregion
 
@@ -58,18 +78,51 @@ public class MainViewModel : ViewModelBase
         #region Настройка команд
 
         // Мы связали команду AddCommand с методом Add()
-        AddCommand = ReactiveCommand.Create(Add);
+        AddCommandSum = ReactiveCommand.Create(Sum);
+        AddCommandSub = ReactiveCommand.Create(Subtraction);
+        AddCommandDiv = ReactiveCommand.Create(Division);
+        AddCommandMult = ReactiveCommand.Create(Multiplication);
+        ResetCommand = ReactiveCommand.Create(Reset);
 
         #endregion
 
         Result = 0;
     }
 
-    private void Add()
+    private void Sum()
     {
         var a = double.Parse(Argument1);
         var b = double.Parse(Argument2);
 
         Result = a + b;
+    }
+    private void Subtraction()
+    {
+        var a = double.Parse(Argument1);
+        var b = double.Parse(Argument2);
+
+        Result = a - b;
+    }
+    private void Division()
+    {
+        var a = double.Parse(Argument1);
+        var b = double.Parse(Argument2);
+
+        Result = a / b;
+    }
+    private void Multiplication()
+    {
+        var a = double.Parse(Argument1);
+        var b = double.Parse(Argument2);
+
+        Result = a * b;
+    }
+
+    private void Reset()
+    {
+        Argument1 = string.Empty;
+        Argument2 = string.Empty;
+
+        Result = 0;
     }
 }
